@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Facades\Input;
 
 class UsersController extends Controller
 {
@@ -20,13 +21,43 @@ class UsersController extends Controller
 
         $data = ['user' => $users];
 
-//        print($users);
-
         return view('users', $data);
-
-
-//        return 'Hello World';
-//        return view('users');
     }
+
+    public function add()
+    {
+
+//        $users = \DB::table('users')->get();
+//
+//        $data = ['user' => $users];
+
+        return view('add_user');
+    }
+
+//    public function store()
+//    {
+//        $data = Input::all();
+//
+//        $data->id;
+//
+//        $user = new User;
+//        $user->id = $data->id;
+//        $user->name = $data->name;
+//        $user->email = $data->email;
+//        $user->password = $data->password;
+//        $user->save();
+//
+//
+//
+//
+////        $users = \DB::table('users')->get();
+////
+////        $data = ['user' => $users];
+//
+////        return view('add_user');
+////        return $this->show()->with('message', 'User added');
+////        return $this->show();
+//    }
+
 
 }

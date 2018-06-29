@@ -89,37 +89,50 @@
 
         </div>
         <div>
-            <div class="row">
-                <table class="col col-4">
-                    <tr>
-                        <th>Id</th>
-                        <th>User</th>
-                        <th>Email</th>
 
-                    </tr>
-        @foreach($user as $key => $data)
-                    <tr>
-                        <th>{{$data->id}}</th>
-                        <th>{{$data->name}}</th>
-                        <th>{{$data->email}}</th>
 
-                    </tr>
-        @endforeach
-                </table>
+            <section class="col col-2">
+                {!! Form::label('id', 'ID', ['class' => 'label']) !!}
+                <label class="input">
+                    {!! Form::text('id', '', ['class' => 'form-control']) !!}
+                </label>
+            </section>
 
-            </div>
-        <button type="button">Add user</button>
-            {!!Form::open(['action' => ['UsersController@add'], 'method' => 'POST'])!!}
-            {{Form::submit('Add', ['class' => 'btn btn-danger'])}}
-            {!!Form::close()!!}
+            <section class="col col-2">
+                {!! Form::label('name', 'Name', ['class' => 'label']) !!}
+                <label class="input">
+                    {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                </label>
+            </section>
+
+
+
+            <section class="col col-2">
+                {!! Form::label('email', 'Email', ['class' => 'label']) !!}
+                <label class="input">
+                    {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                </label>
+            </section>
+
+
+            <section class="col col-2">
+                {!! Form::label('password', 'Password', ['class' => 'label']) !!}
+                <label class="input">
+                    {!! Form::text('name', '', ['class' => 'form-control']) !!}
+                </label>
+            </section>
+
+
+
+
 
         </div>
         <div class="links">
         </div>
     </div>
 </div>
-            <div class="sidenav">
-                {!! Menu::get('navbar') !!}
-            </div>
+<div class="sidenav">
+    {!! Menu::get('navbar') !!}
+</div>
 </body>
 </html>
