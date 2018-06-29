@@ -82,6 +82,20 @@
                     Trip Advisor
                 </div>
 
+                <div>
+                @php
+                Menu::create('navbar', function($menu) {
+                $menu->url('/', 'Home');
+                $menu->dropdown('Sites', function ($sub) {
+                $sub->url('/users', 'Users');
+                $sub->url('trips', 'Trips');
+                });
+                });
+                @endphp
+                    {!! Menu::get('navbar') !!}
+
+                </div>
+
                 <div class="links">
 <!--                    <a href="https://laravel.com/docs">Documentation</a>-->
 <!--                    <a href="https://laracasts.com">Laracasts</a>-->

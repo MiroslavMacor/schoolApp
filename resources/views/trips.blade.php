@@ -1,3 +1,4 @@
+@include('base')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -65,7 +66,7 @@
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref ">
 
     <div class="content">
         <div class="title m-b-md">
@@ -84,13 +85,15 @@
         </div>
 
         <div class="links">
-            <!--                    <a href="https://laravel.com/docs">Documentation</a>-->
-            <!--                    <a href="https://laracasts.com">Laracasts</a>-->
-            <!--                    <a href="https://laravel-news.com">News</a>-->
-            <!--                    <a href="https://forge.laravel.com">Forge</a>-->
-            <!--                    <a href="https://github.com/laravel/laravel">GitHub</a>-->
+            <a href="https://lostwayfarers.com/must-see-places-to-visit-australia">Austria</a>
+            <a href="https://lostwayfarers.com/must-see-places-to-visit-indonesia">Indonesia</a>
+            <a href="https://https://lostwayfarers.com/must-see-places-to-visit-new-zealand">New Zeland</a>
+
         </div>
     </div>
 </div>
+    <div class="sidenav">
+        {!! Menu::get('navbar') !!}
+    </div>
 </body>
 </html>

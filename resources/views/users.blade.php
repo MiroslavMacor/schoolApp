@@ -1,3 +1,4 @@
+@include('base')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -65,7 +66,7 @@
     </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref">
 
     <div class="content">
         <div class="title m-b-md">
@@ -83,23 +84,26 @@
 
         </div>
         <div>
-        @foreach(users as $key => $data)
-        <tr>
-            <th>{{$data->id}}</th>
-            <th>{{$data->name}}</th>
-            <th>{{$data->email}}</th>
+        @foreach($user as $key => $data)
+            <div class="row">
+                <section class="col col-4">
+                    <tr>
+                        <th>{{$data->id}}</th>
+                        <th>{{$data->name}}</th>
+                        <th>{{$data->email}}</th>
 
-        </tr>
+                    </tr>
+                </section>
+
+            </div>
         @endforeach
         </div>
         <div class="links">
-            <!--                    <a href="https://laravel.com/docs">Documentation</a>-->
-            <!--                    <a href="https://laracasts.com">Laracasts</a>-->
-            <!--                    <a href="https://laravel-news.com">News</a>-->
-            <!--                    <a href="https://forge.laravel.com">Forge</a>-->
-            <!--                    <a href="https://github.com/laravel/laravel">GitHub</a>-->
         </div>
     </div>
 </div>
+            <div class="sidenav">
+                {!! Menu::get('navbar') !!}
+            </div>
 </body>
 </html>

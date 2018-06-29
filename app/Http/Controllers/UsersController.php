@@ -18,11 +18,15 @@ class UsersController extends Controller
 
         $users = \DB::table('users')->get();
 
-        return view('users', ['users' => $users]);
+        $data = ['user' => $users];
+
+//        print($users);
+
+        return view('users', $data);
 
 
 //        return 'Hello World';
-        return view('users');
+//        return view('users');
     }
 
 }
