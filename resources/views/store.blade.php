@@ -1,5 +1,5 @@
 @include('base')
-
+<!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -89,13 +89,12 @@
 
         </div>
         <div>
-            {!! Form::open(['url' => '/store', 'class' => 'smart-form', 'id' => 'storeId']) !!}
 
 
             <section class="col col-2">
                 {!! Form::label('id', 'ID', ['class' => 'label']) !!}
-                <label class="input" id="id" name="id">
-                    {!! Form::text('id', '', ['class' => 'form-control', 'name' => 'id', 'id' => 'id']) !!}
+                <label class="input">
+                    {!! Form::text('id', '', ['class' => 'form-control']) !!}
                 </label>
             </section>
 
@@ -111,42 +110,11 @@
             <section class="col col-2">
                 {!! Form::label('email', 'Email', ['class' => 'label']) !!}
                 <label class="input">
-                    {!! Form::text('email', '', ['class' => 'form-control']) !!}
+                    {!! Form::text('name', '', ['class' => 'form-control']) !!}
                 </label>
             </section>
 
 
-            <section class="col col-2">
-                {!! Form::label('password', 'Password', ['class' => 'label']) !!}
-                <label class="input">
-                    {!! Form::text('password', '', ['class' => 'form-control']) !!}
-                </label>
-            </section>
-
-            <input type="text" id="firstname" name="firstname"></input>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Name"/>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">ADD PRODUCT</button>
-            </div>
-
-
-
-            <footer class="padding-10">
-                {!! Form::submit(
-                'Save',
-                [
-                'class' => 'btn btn-primary margin-t-0 margin-l-4',
-                'id' => 'btn-customer-service-request-create',
-                'action' => 'UsersController@store', 'method' => 'POST'
-                ]
-                ) !!}
-                <a class="btn btn-primary margin-t-0 margin-l-0" id="cancel-button">Cancel</a>
-
-            </footer>
-
-
-
-            {!! Form::close() !!}
 
 
 

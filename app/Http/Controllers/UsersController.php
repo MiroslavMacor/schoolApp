@@ -11,6 +11,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\Input;
+use App\User;
+use Illuminate\Http\Request as Request;
 
 class UsersController extends Controller
 {
@@ -34,30 +36,28 @@ class UsersController extends Controller
         return view('add_user');
     }
 
-//    public function store()
-//    {
-//        $data = Input::all();
+    public function store(Request $request)
+    {
+        $data = \Input::all();
+
+        $user = new User;
+        $user->id = $request->input('id');
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = $data['password'];
+        $user->save();
+
+        return redirect('/users');
+        //return \Redirect::route('/users');
+
+//        $users = \DB::table('users')->get();
 //
-//        $data->id;
-//
-//        $user = new User;
-//        $user->id = $data->id;
-//        $user->name = $data->name;
-//        $user->email = $data->email;
-//        $user->password = $data->password;
-//        $user->save();
-//
-//
-//
-//
-////        $users = \DB::table('users')->get();
-////
-////        $data = ['user' => $users];
-//
-////        return view('add_user');
-////        return $this->show()->with('message', 'User added');
-////        return $this->show();
-//    }
+//        $data = ['user' => $users];
+
+//        return view('add_user');
+//        return $this->show()->with('message', 'User added');
+//        return $this->show();
+    }
 
 
 }
