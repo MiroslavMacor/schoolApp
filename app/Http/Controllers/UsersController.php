@@ -47,7 +47,7 @@ class UsersController extends Controller
         $user->password = $data['password'];
         $user->save();
 
-        return redirect('/users');
+        return redirect('/tripsOverview');
         //return \Redirect::route('/users');
 
 //        $users = \DB::table('users')->get();

@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/trips', 'TripsController@show');
-Route::get('/users', 'UsersController@show');
-Route::post('/add_user', 'UsersController@add');
+Route::get('/tripsOverview', 'UsersController@show');
+Route::post('/add_trip', 'UsersController@add');
 Route::post('/store',    'UsersController@store');
-//Route::get('/store',    'UsersController@store');
