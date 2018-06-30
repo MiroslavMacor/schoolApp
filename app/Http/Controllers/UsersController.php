@@ -41,7 +41,7 @@ class UsersController extends Controller
         $data = \Input::all();
 
         $user = new User;
-        $user->id = $request->input('id');
+//        $user->id = $request->input('id');
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->password = $data['password'];

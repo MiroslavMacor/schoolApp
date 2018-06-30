@@ -1,3 +1,4 @@
+@include('base')
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -83,15 +84,7 @@
                 </div>
 
                 <div>
-                @php
-                Menu::create('navbar', function($menu) {
-                $menu->url('/', 'Home');
-                $menu->dropdown('Sites', function ($sub) {
-                $sub->url('/users', 'Users');
-                $sub->url('trips', 'Trips');
-                });
-                });
-                @endphp
+
                     {!! Menu::get('navbar') !!}
 
                 </div>

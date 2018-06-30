@@ -75,43 +75,35 @@
 
     <div class="content">
         <div class="title m-b-md">
-            Users
+            Trip Destinations
         </div>
-        <div class="col ">
-            {{ Form::button(
-            '<span class="glyphicon glyphicon-search"></span>',
-            array(
-            'class'=>'btn btn-warning',
-            'type'=>'submit')
 
-            )
-            }}
-
-        </div>
         <div>
             <div class="row">
                 <table class="col col-4">
                     <tr>
-                        <th>Id</th>
-                        <th>User</th>
-                        <th>Email</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>What did you like?</th>
 
                     </tr>
         @foreach($user as $key => $data)
                     <tr>
-                        <th>{{$data->id}}</th>
                         <th>{{$data->name}}</th>
                         <th>{{$data->email}}</th>
+                        <th>{{$data->password}}</th>
 
                     </tr>
         @endforeach
                 </table>
 
             </div>
-        <button type="button">Add user</button>
+            <div class="">
+
             {!!Form::open(['action' => ['UsersController@add'], 'method' => 'POST'])!!}
-            {{Form::submit('Add', ['class' => 'btn btn-danger'])}}
+            {{Form::submit('Add New Destination', ['class' => 'btn btn-danger'])}}
             {!!Form::close()!!}
+            </div>
 
         </div>
         <div class="links">
